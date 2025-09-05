@@ -1,21 +1,19 @@
+import json
+
 def handler(event, context):
-    query_params = event.get('queryStringParameters', {}) or {}
-    name = query_params.get('name', '')
+    # Your name here - replace "Your Name" with your actual name
+    your_name = "Your Name"
     
-    response = f"""
+    # Simple response with your name
+    html_response = f"""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Name Greeter</title>
-        <style>
-            body {{ font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }}
-            h1 {{ color: #333; }}
-        </style>
+        <title>Proxy Server</title>
+        <meta charset="UTF-8">
     </head>
     <body>
-        <h1>{f'Hello, {name}!' if name else 'Please enter your name'}</h1>
-        <p>Add ?name=YourName to the URL</p>
-        <p>Example: https://yoursite.netlify.app/.netlify/functions/name-get?name=John</p>
+        <h1>{your_name}</h1>
     </body>
     </html>
     """
@@ -23,7 +21,7 @@ def handler(event, context):
     return {
         'statusCode': 200,
         'headers': {
-            'Content-Type': 'text/html'
+            'Content-Type': 'text/html',
         },
-        'body': response
+        'body': html_response
     }
