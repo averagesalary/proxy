@@ -1,3 +1,10 @@
 [build]
-  functions = "functions"
-  netlify deploy --prod
+  functions = "functions"  # Points to your functions folder
+
+# Optional: Specify Python version (recommended)
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# Optional: Settings for the deployed site
+[settings]
+  # No special settings needed for functions
