@@ -1,13 +1,5 @@
 [build]
-  publish = "."
   functions = "netlify/functions"
 
-[[redirects]]
-  from = "/.netlify/functions/proxy"
-  to = "/.netlify/functions/proxy"
-  status = 200
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/proxy?name=:splat"
-  status = 200
+[build.environment]
+  PYTHON_VERSION = "3.9"  # Optional: 3.8, 3.9, or 3.10
