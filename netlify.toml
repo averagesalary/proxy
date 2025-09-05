@@ -1,10 +1,13 @@
 [build]
-  functions = "netlify/functions"  # Points to your functions folder
+  publish = "."
+  functions = "netlify/functions"
 
-# Optional: Specify Python version (recommended)
-[build.environment]
-  PYTHON_VERSION = "3.11"
+[[redirects]]
+  from = "/.netlify/functions/proxy"
+  to = "/.netlify/functions/proxy"
+  status = 200
 
-# Optional: Settings for the deployed site
-[settings]
-  # No special settings needed for functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/proxy?name=:splat"
+  status = 200
