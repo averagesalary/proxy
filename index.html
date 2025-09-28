@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download 007 - Blood Stone (Europe)</title>
+</head>
+<body>
+    <h1>007 - Blood Stone (Europe)</h1>
+    <h2>PlayStation 3 Game Download</h2>
+    
+    <p>Click the button below to download the game file. The download will start immediately without any redirects or pop-ups.</p>
+    
+    <button id="downloadBtn">Download Game File</button>
+    
+    <p>File information:</p>
+    <ul>
+        <li>Platform: Sony PlayStation 3</li>
+        <li>Title: 007 - Blood Stone</li>
+        <li>Region: Europe</li>
+        <li>Languages: English, French, German</li>
+        <li>Format: ZIP</li>
+    </ul>
+    
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Create a temporary anchor element
+            const a = document.createElement('a');
+            
+            // Set the file URL
+            a.href = 'http://cache3.mtcontent.rs/files/Redump/Sony - PlayStation 3/007 - Blood Stone (Europe) (En,Fr,De).zip';
+            
+            // Set the download attribute with filename
+            a.download = '007 - Blood Stone (Europe) (En,Fr,De).zip';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    </script>
+</body>
+</html>
